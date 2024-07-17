@@ -15,6 +15,7 @@ import numpy as np
 import threading
 import wave, pyaudio
 import queue
+import time
 ''' Add project path to sys.path V1.0'''
 import os, sys
 __dir_name = os.path.dirname(os.path.realpath(__file__))
