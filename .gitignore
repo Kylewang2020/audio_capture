@@ -1,0 +1,5 @@
+/data
+/log
+/git.txt
+/*.code-workspace
+/lib/__pycache__
