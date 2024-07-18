@@ -57,7 +57,7 @@ def log_init(logF="log.log", logOut=3, logL=logging.DEBUG, path=None):
 
 def timer(indent=2, isTimer=True):
     '''
-    decorator to count the time consuming. 
+    Decorator to count the time consuming. 
     Could stop by set the var isTimer=False.
     '''
     def decorator(func):
@@ -174,3 +174,4 @@ def get_mix_device(audio, host_api_index=0):
 if __name__ == '__main__':
     fileName = GetFileName(isMic=True, id=1)
     print(fileName)
+    list_audio_devices()

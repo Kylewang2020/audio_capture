@@ -12,12 +12,20 @@
 
 import time
 import logging
-from lib.myRecorder import myRecorder
+from lib.myRecorder import myRecorder, pyaudio
 
 def call_auto():
     try:
+        DeviceId = None
+        IsMic = True
+        Channels = 2
+        Rate = 16000
+        Format = pyaudio.paInt16
+        Chunk=1024
+        Min_Seconds=2
         Audio = myRecorder(logF="recorder.log", logOut=3, logL=logging.DEBUG)
-        Audio.init(isMic=True)
+        Audio.init(deviceId=DeviceId, isMic=IsMic, CHANNELS=Channels, RATE=Rate, FORMAT=Format, chunk=Chunk,
+                   Threshold=0.025, MinSeconds=Min_Seconds, Silence_Duration=2)
         Audio.run(3)
         while True:
             file = Audio.get(True)

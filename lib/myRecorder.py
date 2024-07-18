@@ -96,10 +96,8 @@ class myRecorder(object):
                                           input_device_index=device_id, 
                                           frames_per_buffer=self.chunkSize)
 
-            self.log.info("audio index:{}; name:\"{}\"; rate:{}".format(
-                           device_id, device_info["name"], self.framerate, self.channels))
-            self.log.debug("rate={}; FORMAT={}; channels={}".format(
-                           self.framerate, self.fmt, self.channels))
+            self.log.info("audio_index:{}; name:\"{}\"; rate:{}; FORMAT={}; channels={}".format(
+                           device_id, device_info["name"], self.framerate, self.channels, self.fmt, self.channels))
             self.isInit = True
         except Exception as e:
             self.log.error("init failed:{}".format(e))
